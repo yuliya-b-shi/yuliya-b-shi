@@ -241,6 +241,54 @@
 			<p>Важно применять имеющиеся инструменты уместно и с пользой. Это поможет сэкономить уйму времени, высвободив его для действительно важных и не доступных алгоритмам задач — творческих.</p>
 			
         </div> 
+    </div> <!-- закрываем .container -->
     
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-img" id="modalImage">
+    </div>
+    
+    <script>
+        function openModal(img) {
+            document.getElementById('imageModal').style.display = 'block';
+            document.getElementById('modalImage').src = img.src;
+        }
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+        document.getElementById('imageModal').onclick = function(e) {
+            if (e.target === this) closeModal();
+        }
+        
+        function shareArticle() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: 'Интересная статья о редактуре текстов',
+                    url: window.location.href
+                }).catch(err => {
+                    console.log('Ошибка шаринга:', err);
+                    fallbackCopy();
+                });
+            } else {
+                fallbackCopy();
+            }
+            
+            function fallbackCopy() {
+                navigator.clipboard.writeText(window.location.href)
+                    .then(() => alert('✅ Ссылка скопирована в буфер!'))
+                    .catch(() => {
+                        const input = document.createElement('input');
+                        input.value = window.location.href;
+                        document.body.appendChild(input);
+                        input.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(input);
+                        alert('✅ Ссылка скопирована!');
+                    });
+            }
+        }
+    </script>
 </body>
+
 </html>
