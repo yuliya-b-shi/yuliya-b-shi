@@ -74,7 +74,7 @@
         }
         
         h1 {
-            font-size: 36px;
+            font-size: 36px; 
             color: #2c3e50;
             margin-bottom: 10px;
         }
@@ -243,6 +243,74 @@
             line-height: 1.5;
             color: #666;
         }
+
+        /* Новый раздел "Примеры работ" */
+        .works-section {
+            margin: 50px 0;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #e67e22;
+        }
+        
+        .works-section h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ecf0f1;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        .works-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .work-item {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .work-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .work-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .work-item p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .work-link {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .work-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .work-link i {
+            margin-left: 8px;
+            font-size: 14px;
+        }
         
         footer {
             text-align: center;
@@ -281,6 +349,10 @@
             .services-list {
                 flex-direction: column;
             }
+
+            .works-section {
+                padding: 20px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -290,6 +362,10 @@
             
             .topic-card {
                 padding: 20px;
+            }
+            
+            .work-item {
+                padding: 15px;
             }
         }
     </style>
@@ -308,8 +384,8 @@
             <p class="subtitle">Редактор, переводчик, контент-мейкер с IT-бэкграундом</p>
             
             <div class="contact">
-                <a href="mailto:yuliya-or@mail.ru" class="email">shironina-yuliya@mail.ru</a>
-                <a href="https://t.me/YuliyaShiro" class="telegram" target="_blank">
+                <a href="mailto:shironina-yuliya@mail.ru" class="email">shironina-yuliya@mail.ru</a>
+                <a href="https://t.me/YuliyaShironina" class="telegram" target="_blank">
                     <i class="fab fa-telegram"></i>@ShironinaYuliya
                 </a>
             </div>
@@ -327,18 +403,14 @@
                     <div class="topic-number">1</div>
                     <h3 class="topic-title">IT</h3>
                     <p class="topic-description">Технологии, программирование, AI, цифровизация</p>
-                    <a href="https://vk.com/@268175740-kak-pribratsya-v-tekste-i-ne-utonut-v-rutine" class="topic-link" target="_blank">
-                        Пример статьи <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    <!-- Убрана ссылка "Пример статьи" -->
                 </div>
                 
                 <div class="topic-card">
                     <div class="topic-number">2</div>
                     <h3 class="topic-title">Литература и психология</h3>
                     <p class="topic-description">Классическая литература, анализ текстов, психология восприятия</p>
-                    <a href="https://www.dissercat.com/content/evolyutsiya-smekhovogo-mira-v-russkoi-stikhotvornoi-komedii-i-gore-ot-uma-griboedova" class="topic-link" target="_blank">
-                        Пример статьи <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    <!-- Убрана ссылка "Пример статьи" -->
                 </div>
                 
                 <div class="topic-card">
@@ -360,6 +432,24 @@
                 </div>
             </div>
         </div>
+
+        <!-- Новый раздел "Примеры работ" -->
+        <div class="works-section">
+            <h2>Примеры работ</h2>
+            <div class="works-list">
+                <div class="work-item">
+                    <h3>Как прибраться в тексте и не утонуть в рутине</h3>
+                    <p>IT-инструменты в работе редактора.</p>
+                    <a href="article1.html" class="work-link">Читать статью <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="work-item">
+                    <h3>Шаг за шагом к собственному сайту</h3>
+                    <p>Как филологу сделать свой бесплатный сайт-визитку.</p>
+                    <a href="article2.html" class="work-link">Читать статью <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
         
         <div class="services">
             <h2>Что я могу предложить:</h2>
@@ -377,12 +467,7 @@
                 <div class="service-item">
                     <h3>SEO-оптимизация</h3>
                     <p>Подбор ключевых слов, оптимизация текстов для поисковых систем</p>
-                </div>
-                
-                <div class="service-item">
-                    <h3>Редактура</h3>
-                    <p>Вычитка, стилистическая правка, адаптация текстов под разные форматы</p>
-                </div>
+                </div>                
             </div>
         </div>
         
@@ -392,9 +477,4 @@
         </footer>
     </div>
 </body>
-
 </html>
-
-
-
-
